@@ -1,6 +1,13 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @divisions = Division.all
+    div = params[:div]
+
+    if !div.nil?
+      @books = Book.where(:division_id => div)
+    else
+      @books = Book.all
+    end
   end
 
   def show
