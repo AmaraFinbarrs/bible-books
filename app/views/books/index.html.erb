@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="d flex flex-row justify-content-center">
+        <% @books.each do |book| %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><%= link_to book.title, book_path(book.id) %></h3>
+                    </div>
+                    <div class="card-body">
+                        <%= link_to "View", book_path(book.id), class: 'btn btn-primary' %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<%= link_to "Create Book", new_book_path %>
+
+

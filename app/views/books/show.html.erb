@@ -1,0 +1,11 @@
+<% if @book.division.present? %>
+    <h1>Division: <%=@book.division.division %></h1>
+<% end %>
+
+<h3><%= @book.title %></h3>
+
+<p><%= @book.content %></p>
+
+<%= link_to "Edit", edit_book_path(@book.id) %>
+<%= button_to "Delete", book_path(@book.id), method: :delete %>
+<%= link_to "Back", books_path %>

@@ -1,0 +1,11 @@
+<%= form_for @book do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+
+    <%= f.select :division_id, Division.all.map {|d| [d.division, d.id]} %>
+
+    <%= f.submit %>
+<% end %>
