@@ -1,22 +1,26 @@
-<%= form_with(model: division) do |form| %>
-  <% if division.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(division.errors.count, "error") %> prohibited this division from being saved:</h2>
+<div class="card mt-2 ">
+    <div class="card-body">
+        <%= form_with(model: division) do |form| %>
+          <% if division.errors.any? %>
+            <div style="color: red">
+              <h2><%= pluralize(division.errors.count, "error") %> prohibited this division from being saved:</h2>
 
-      <ul>
-        <% division.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+              <ul>
+                <% division.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group mb-4">
+              <%= form.label :division, style: "display: block" %>
+              <%= form.text_field :division, class: 'form-control'  %>
+          </div>
+          <div class="d-flex justify-content-center gap-3" >
+              <%= form.submit "Create Division", class: 'btn btn-outline-success d-block flex-fill' %>
+              <%= link_to "Back", books_path, class: 'btn btn-outline-primary d-block flex-fill' %>
+          </div>
         <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :division, style: "display: block" %>
-    <%= form.text_field :division %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
