@@ -11,8 +11,9 @@ if Verse.count.zero?
     book_hash.each do |chapter_number, number_of_verses|
       find_chapter = Chapter.find_by(chapter_no: chapter_number.to_s.to_i)
       number_of_verses.times do |number|
+        number += 1
         Verse.create!(verse_no: number,
-                      content: "Verse #{chapter_number}: #{Faker::Lorem.paragraph(sentence_count: 10)}",
+                      content: "Verse #{number}: #{Faker::Lorem.paragraph(sentence_count: 10)}",
                       chapter_id: find_chapter.id,
                       book_id: find_book.id)
       end

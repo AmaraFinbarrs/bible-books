@@ -23,6 +23,7 @@ if Book.count.zero?
                'Songs of Solomon']
 
   book_name.each_with_index do |name, counter|
+    counter += 1
     if counter <= 5
       Book.create!(title: name,
                    description: Faker::Lorem.paragraph(sentence_count: 10),
