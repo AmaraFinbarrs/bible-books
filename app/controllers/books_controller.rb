@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   def show
     # find the book we want to render
     @book = Book.find(params[:id])
+    @chapters = Chapter.where(book_id: @book.id)
   end
 
   def new
