@@ -1,0 +1,40 @@
+if Book.count.zero?
+  book_name = ['Genesis',
+               'Exodus',
+               'Leviticus',
+               'Numbers',
+               'Deuteronomy',
+               'Joshua',
+               'Judges',
+               'Ruth',
+               '1 Samuel',
+               '2 Samuel',
+               '1 Kings',
+               '2 Kings',
+               '1 Chronicles',
+               '2 Chronicles',
+               'Ezra',
+               'Nehemiah',
+               'Esther',
+               'Job',
+               'Psalms',
+               'Proverbs',
+               'Ecclesiates',
+               'Songs of Solomon']
+
+  book_name.each_with_index do |name, counter|
+    if counter <= 5
+      Book.create!(title: name,
+                   description: Faker::Lorem.paragraph(sentence_count: 10),
+                   division_id: 1)
+    elsif counter <= 17
+      Book.create!(title: name,
+                   description: Faker::Lorem.paragraph(sentence_count: 10),
+                   division_id: 2)
+    else
+      Book.create!(title: name,
+                   description: Faker::Lorem.paragraph(sentence_count: 10),
+                   division_id: 3)
+    end
+  end
+end

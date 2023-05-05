@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_02_110105) do
+ActiveRecord::Schema.define(version: 2023_05_05_093806) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.text "content"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "division_id"
+  end
+
+  create_table "chapters", force: :cascade do |t|
+    t.integer "chapter_no"
+    t.integer "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_chapters_on_book_id"
   end
 
   create_table "divisions", force: :cascade do |t|
@@ -26,4 +34,18 @@ ActiveRecord::Schema.define(version: 2023_05_02_110105) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "verses", force: :cascade do |t|
+    t.integer "verse_no"
+    t.text "content"
+    t.integer "chapter_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_verses_on_book_id"
+    t.index ["chapter_id"], name: "index_verses_on_chapter_id"
+  end
+
+  add_foreign_key "chapters", "books"
+  add_foreign_key "verses", "books"
+  add_foreign_key "verses", "chapters"
 end

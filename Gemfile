@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use boostrap
+# Use Boostrap for styling
 gem 'bootstrap', '~> 5.0.2'
 
 # Use Active Storage variant
@@ -30,6 +30,9 @@ gem 'bootstrap', '~> 5.0.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+# Use Faker for seeds
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
