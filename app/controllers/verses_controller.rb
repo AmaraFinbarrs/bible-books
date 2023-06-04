@@ -6,6 +6,10 @@ class VersesController < ApplicationController
     @verses = Verse.all
   end
 
+  def search_related_words
+    return @verses = Verse.where('content LIKE ?', '%' + params[:q] + '%') if params[:q]
+  end
+
   # GET /verses/1 or /verses/1.json
   def show
   end

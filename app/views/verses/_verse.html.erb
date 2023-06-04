@@ -1,0 +1,14 @@
+<div class="row" >
+    <% @verses.each do |verse| %>
+        <div class="card mt-3 ">
+            <div class="card-body">
+                <h3><%= "#{verse.book.title} #{verse.chapter_id}:#{verse.id}" %></h3>
+                <%= verse.content %>
+                <br>
+                <%= link_to 'Show', verse, class: 'btn btn-outline-primary' %>
+                <%= link_to 'Edit', edit_verse_path(verse), class: 'btn btn-outline-primary'  %>
+                <%= link_to 'Destroy', verse, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary'  %>
+            </div>
+        </div>
+    <% end %> 
+</div>
