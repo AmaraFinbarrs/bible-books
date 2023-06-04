@@ -1,33 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
 
-<h1>Verses</h1>
+        <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Verse no</th>
-      <th>Content</th>
-      <th>Chapter</th>
-      <th>Book</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <h1>Verses</h1>
 
-  <tbody>
-    <% @verses.each do |verse| %>
-      <tr>
-        <td><%= verse.verse_no %></td>
-        <td><%= verse.content %></td>
-        <td><%= verse.chapter_id %></td>
-        <td><%= verse.book_id %></td>
-        <td><%= link_to 'Show', verse %></td>
-        <td><%= link_to 'Edit', edit_verse_path(verse) %></td>
-        <td><%= link_to 'Destroy', verse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <%= link_to 'Create New Verse', new_verse_path, class: 'btn btn-outline-primary' %>
+
+        <div class="row" >
+          <% @verses.each do |verse| %>
+                <div class="card mt-3 ">
+                    <div class="card-body">
+                        <h3><%= "#{verse.book.title} #{verse.chapter_id}:#{verse.id}" %></h3>
+                        <%= verse.content %>
+                        <br>
+                        <%= link_to 'Show', verse, class: 'btn btn-outline-primary' %>
+                        <%= link_to 'Edit', edit_verse_path(verse), class: 'btn btn-outline-primary'  %>
+                        <%= link_to 'Destroy', verse, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary'  %>
+                    </div>
+                </div>
+          <% end %> 
+        </div>
 
 <br>
-
-<%= link_to 'New Verse', new_verse_path %>
