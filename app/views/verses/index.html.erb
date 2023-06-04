@@ -1,26 +1,43 @@
+<p id="notice"><%= notice %></p>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-
-        <p id="notice"><%= notice %></p>
-
-        <h1>Verses</h1>
-
-        <%= link_to 'Create New Verse', new_verse_path, class: 'btn btn-outline-primary' %>
-
-        <div class="row" >
-          <% @verses.each do |verse| %>
-                <div class="card mt-3 ">
-                    <div class="card-body">
-                        <h3><%= "#{verse.book.title} #{verse.chapter_id}:#{verse.id}" %></h3>
-                        <%= verse.content %>
-                        <br>
-                        <%= link_to 'Show', verse, class: 'btn btn-outline-primary' %>
-                        <%= link_to 'Edit', edit_verse_path(verse), class: 'btn btn-outline-primary'  %>
-                        <%= link_to 'Destroy', verse, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary'  %>
-                    </div>
-                </div>
-          <% end %> 
+            <h1>Verses</h1>
+            <%= link_to 'Create New Verse', new_verse_path, class: 'btn btn-outline-primary' %>
         </div>
-
-<br>
+        <div class="col-md-8">
+            <div class="row" >
+                <% @verses.each do |verse| %>
+                        <div class="card mt-3 ">
+                            <div class="card-body">
+                                <h3><%= "#{verse.book.title} #{verse.chapter_id}:#{verse.id}" %></h3>
+                                <%= verse.content %>
+                                <br>
+                                <%= link_to 'Show', verse, class: 'btn btn-outline-primary' %>
+                                <%= link_to 'Edit', edit_verse_path(verse), class: 'btn btn-outline-primary'  %>
+                                <%= link_to 'Destroy', verse, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary'  %>
+                            </div>
+                        </div>
+                <% end %> 
+            </div>
+        </div>
+        <div class="col-md-4">  
+            <div class="card mt-3">
+                <div class="card-header">
+                    Books
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <% @books.each do |book| %>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <%= link_to book.title, verses_path(:div => book.id) %>
+                            <span class="badge bg-primary rounded-pill"> <%= book.verses.count %> </span>
+                        </li>
+                        <% end %>
+                    </ul>
+                </div> 
+            </div>    
+        </div>
+    </div>
+</div>

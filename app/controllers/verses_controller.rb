@@ -3,11 +3,19 @@ class VersesController < ApplicationController
 
   # GET /verses or /verses.json
   def index
-    @verses = Verse.all
+    # @verses = Verse.all
+    @books = Book.all
+    div = params[:div]
+
+    if !div.nil?
+      @verses = Verse.where(:book_id => div)
+    else
+      @verses = Verse.all
+    end
   end
 
   def search_related_words
-    return @verses = Verse.where('content LIKE ?', '%' + params[:q] + '%') if params[:q]
+    @verses = Verse.where('content LIKE ?', '%' + params[:q] + '%')
   end
 
   # GET /verses/1 or /verses/1.json

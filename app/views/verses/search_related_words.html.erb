@@ -1,10 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h1 class="mb-4">Search results for: "<%= params[:q] %>" </h1>
-            <%= render @verses %>
-            <%= "There are no results to display for your search!" if @verses.empty?%>
-            
-        </div>
+        <h1 class="mb-4">Search results for: "<%= params[:q] %>" </h1>
+        <%= render @verses %>
+        <%= "There are no results to display for your search!" if @verses.empty?%>
     </div>
 </div>
