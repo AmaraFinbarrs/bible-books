@@ -11,7 +11,7 @@
                 <% @verses.each do |verse| %>
                         <div class="card mt-3 ">
                             <div class="card-body">
-                                <h3><%= "#{verse.book.title} #{verse.chapter_id}:#{verse.id}" %></h3>
+                                <h3><%= "#{verse.book.title} #{verse.chapter.chapter_no}:#{verse.verse_no}" %></h3>
                                 <%= verse.content %>
                                 <br>
                                 <%= link_to 'Show', verse, class: 'btn btn-outline-primary' %>
