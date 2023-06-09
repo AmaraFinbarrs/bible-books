@@ -20,8 +20,15 @@
                             </div>
                         </div>
                 <% end %> 
+                <div class="bb_pagination mb-4">
+                    <div class="page_info mb-2">
+                        <%= page_entries_info @verses, {entry_name: 'Verse'} %>
+                    </div> 
+                    <%= will_paginate @verses, :container => false %>
+                </div>
             </div>
         </div>
+
         <div class="col-md-4">  
             <div class="card mt-3">
                 <div class="card-header">

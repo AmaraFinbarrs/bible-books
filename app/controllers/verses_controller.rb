@@ -8,14 +8,14 @@ class VersesController < ApplicationController
     div = params[:div]
 
     if !div.nil?
-      @verses = Verse.where(:book_id => div)
+      @verses = Verse.where(:book_id => div).paginate(page: params[:page])
     else
-      @verses = Verse.all
+      @verses = Verse.paginate(page: params[:page])
     end
   end
 
   def search_related_words
-    @verses = Verse.where('content LIKE ?', '%' + params[:q] + '%')
+    @verses = Verse.where('content LIKE ?', '%' + params[:q] + '%').paginate(page: params[:page])
   end
 
   # GET /verses/1 or /verses/1.json
