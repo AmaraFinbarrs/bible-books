@@ -28,6 +28,16 @@ class BooksController < ApplicationController
     else
       render :new
     end
+    create_book_chapters
+  end
+
+  def create_book_chapters
+    no_of_chapter = book_params[:no_of_chapter]
+
+    (1..no_of_chapter.to_i).each do |chapter_number|
+      Chapter.create!(chapter_no: chapter_number,
+                      book_id: @book.id)
+    end
   end
 
   def edit
@@ -57,6 +67,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :content, :division_id)
+    params.require(:book).permit(:title, :content, :division_id, :no_of_chapter)
   end
 end
