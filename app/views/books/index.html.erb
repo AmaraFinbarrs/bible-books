@@ -5,10 +5,11 @@
                 <% @books.each do |book| %>
                     <div class="col-md-6">
                         <div class="card mt-3 ">
-                            <div class="card-body">
-                                <h3><%= link_to book.title, book_path(book.id) %></h3>
-                                <%= link_to "View", book_path(book.id), class: 'btn btn-primary' %>
-                            </div>
+                            <%= link_to book_path(book.id), class: 'book-links' do %>
+                                <div class="card-body">
+                                    <h3><%= book.title%></h3>
+                                </div>
+                            <% end %>
                         </div>
                     </div>
                 <% end %> 
