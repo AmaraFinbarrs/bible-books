@@ -4,9 +4,9 @@ class BooksController < ApplicationController
     div = params[:div]
 
     if !div.nil?
-      @books = Book.where(:division_id => div)
+      @books = Book.where(:division_id => div).paginate(page: params[:page])
     else
-      @books = Book.all
+      @books = Book.paginate(page: params[:page])
     end
   end
 

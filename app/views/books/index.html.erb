@@ -12,6 +12,12 @@
                         </div>
                     </div>
                 <% end %> 
+                <div class="bb_pagination mb-4">
+                    <div class="page_info mb-2">
+                        <%= page_entries_info @books, {entry_name: 'Book'} %>
+                    </div> 
+                    <%= will_paginate @books, :container => false %>
+                </div>
             </div>
         </div>
         <div class="col-md-4">  

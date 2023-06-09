@@ -4,4 +4,6 @@ class Book < ApplicationRecord
 
   has_many :chapters
   has_many :verses
+
+  self.per_page = 12
 end
