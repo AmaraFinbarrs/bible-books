@@ -24,21 +24,23 @@
             </form>
             <ul class="navbar-nav ms-md-auto">
               <li class="nav-item active">
-                <%= link_to "Create Book", new_book_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item active">
                 <%= link_to "Create Division", new_division_path, class: 'nav-link'  %>
               </li>
+
+              <li class="nav-item active">
+                <%= link_to "Create Book", new_book_path, class: 'nav-link' %>
+              </li>
+
+              <li class="nav-item active">
+                <%= link_to "Create Verse", new_verse_path, class: 'nav-link'  %>
+              </li>
+
               <li class="nav-item active">
                 <%= link_to "Divisions", divisions_path, class: 'nav-link'  %>
               </li>
 
               <li class="nav-item active">
                 <%= link_to "Books", books_path, class: 'nav-link'  %>
-              </li>
-
-              <li class="nav-item active">
-                <%= link_to "Chapters", chapters_path, class: 'nav-link'  %>
               </li>
 
               <li class="nav-item active">
