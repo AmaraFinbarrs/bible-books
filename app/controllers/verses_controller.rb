@@ -1,5 +1,6 @@
 class VersesController < ApplicationController
   before_action :set_verse, only: %i[ show edit update destroy ]
+  # before_action :find_values_for_dynamic_dropdown
 
   # GET /verses or /verses.json
   def index
@@ -25,6 +26,9 @@ class VersesController < ApplicationController
   # GET /verses/new
   def new
     @verse = Verse.new
+
+    # @books = Book.all
+    # @chapters = @book&.chapters || []
   end
 
   # GET /verses/1/edit
@@ -71,12 +75,19 @@ class VersesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_verse
-      @verse = Verse.find(params[:id])
-    end
+  def set_verse
+    @verse = Verse.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def verse_params
-      params.require(:verse).permit(:verse_no, :content, :chapter_id, :book_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def verse_params
+    params.require(:verse).permit(:verse_no, :content, :chapter_id, :book_id)
+  end
+
+  # def find_values_for_dynamic_dropdown
+  #   @book = Book.find_by(id: params[:book_id].presence)
+  #   @chapter = Chapter.find_by(id: params[:chapter_id].presence)
+  #   @books = Book.all
+  #   @chapters = @book&.chapters || []
+  # end
 end

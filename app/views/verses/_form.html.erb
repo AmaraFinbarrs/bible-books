@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :verse_no %>
-    <%= form.number_field :verse_no %>
+    <%= form.number_field :verse_no, min: 1 %>
   </div>
 
   <div class="field">
@@ -21,15 +21,27 @@
     <%= form.text_area :content %>
   </div>
 
-  <div class="field">
-    <%= form.label :chapter_id %>
-    <%= form.text_field :chapter_id %>
+ <div class="form-group mb-4">
+      <%= form.label :book_id %> 
+      <%= form.select :book_id, Book.all.map {|b| [b.title.capitalize, b.id]}, class: 'form-select d-block' %>
   </div>
+  <div class="form-group mb-4">
+      <%= form.label :chapter_id %>
+      <%= form.number_field :chapter_id, min: 1 %>
+  </div> 
 
-  <div class="field">
-    <%= form.label :book_id %>
-    <%= form.text_field :book_id %>
+  <%
+=begin%>
+ <div class="form-group mb-4">
+    <%= form.label :book_id %> 
+    <%= select_tag :book_id, options_from_collection_for_select(@books, 'id', 'title', @book&.id), prompt: '- Please select -', onchange: 'this.form.submit()' %>
   </div>
+  <div class="form-group mb-4">
+    <%= form.label :chapter_id %> 
+    <%= select_tag :chapter_id, options_from_collection_for_select(@chapters, 'id', 'chapter_no', @chapter&.id), prompt: '- Please select -', onchange: 'this.form.submit()' %>
+  </div> 
+<%
+=end%>
 
   <div class="actions">
     <%= form.submit %>
