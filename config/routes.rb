@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'books#index'
   resources :books
   resources :verses
-  resources :chapters
+  resources :chapters, only: %w[create destroy]
   resources :divisions
 
   get 'search_related_words', to: 'verses#search_related_words'
