@@ -13,8 +13,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap";
-document.addEventListener("turbolinks:load", () => {
-    $('[data-toggle="tooltip"]').tooltip()
-    $('[data-toggle="tooltip"]').popover()
-})
 import "./application.scss";
