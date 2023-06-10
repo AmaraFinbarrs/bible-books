@@ -3,7 +3,7 @@ class DivisionsController < ApplicationController
 
   # GET /divisions or /divisions.json
   def index
-    @divisions = Division.all
+    @divisions = Division.paginate(page: params[:page])
   end
 
   # GET /divisions/1 or /divisions/1.json

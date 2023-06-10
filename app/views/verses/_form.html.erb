@@ -1,49 +1,61 @@
-<%= form_with(model: verse) do |form| %>
-  <% if verse.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(verse.errors.count, "error") %> prohibited this verse from being saved:</h2>
+<div class="flex-row d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="card mt-5 ">
+            <div class="card-header">
+              <h1>Create a New Verse</h1>
+            </div>
+            <div class="card-body">
+              <%= form_with(model: verse) do |form| %>
+                <% if verse.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(verse.errors.count, "error") %> prohibited this verse from being saved:</h2>
 
-      <ul>
-        <% verse.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+                    <ul>
+                      <% verse.errors.each do |error| %>
+                        <li><%= error.full_message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
 
-  <div class="field">
-    <%= form.label :verse_no %>
-    <%= form.number_field :verse_no, min: 1 %>
-  </div>
+                <div class="form-group mb-4">
+                  <%= form.label :verse_no %>
+                  <%= form.number_field :verse_no, min: 1, class: 'form-control'  %>
+                </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+                <div class="form-group mb-4">
+                  <%= form.label :content %>
+                  <%= form.text_area :content, class: 'form-control'  %>
+                </div>
 
- <div class="form-group mb-4">
-      <%= form.label :book_id %> 
-      <%= form.select :book_id, Book.all.map {|b| [b.title.capitalize, b.id]}, class: 'form-select d-block' %>
-  </div>
-  <div class="form-group mb-4">
-      <%= form.label :chapter_id %>
-      <%= form.number_field :chapter_id, min: 1 %>
-  </div> 
+              <div class="form-group mb-4">
+                    <%= form.label :book_id %> 
+                    <%= form.select :book_id, Book.all.map {|b| [b.title.capitalize, b.id]}, class: 'form-select d-block' %>
+                </div>
+                <div class="form-group mb-4">
+                    <%= form.label :chapter_id %>
+                    <%= form.number_field :chapter_id, min: 1, class: 'form-control'  %>
+                </div> 
 
-  <%
+                <%
 =begin%>
- <div class="form-group mb-4">
-    <%= form.label :book_id %> 
-    <%= select_tag :book_id, options_from_collection_for_select(@books, 'id', 'title', @book&.id), prompt: '- Please select -', onchange: 'this.form.submit()' %>
-  </div>
-  <div class="form-group mb-4">
-    <%= form.label :chapter_id %> 
-    <%= select_tag :chapter_id, options_from_collection_for_select(@chapters, 'id', 'chapter_no', @chapter&.id), prompt: '- Please select -', onchange: 'this.form.submit()' %>
-  </div> 
-<%
+              <div class="form-group mb-4">
+                  <%= form.label :book_id %> 
+                  <%= select_tag :book_id, options_from_collection_for_select(@books, 'id', 'title', @book&.id), prompt: '- Please select -', onchange: 'this.form.submit()' %>
+                </div>
+                <div class="form-group mb-4">
+                  <%= form.label :chapter_id %> 
+                  <%= select_tag :chapter_id, options_from_collection_for_select(@chapters, 'id', 'chapter_no', @chapter&.id), prompt: '- Please select -', onchange: 'this.form.submit()' %>
+                </div> 
+              <%
 =end%>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+                <div class="d-flex justify-content-center gap-3" >
+                    <%= form.submit "Create Verse", class: 'btn btn-outline-success d-block flex-fill' %>
+                    <%= link_to "Back", verses_path, class: 'btn btn-outline-primary d-block flex-fill' %>
+                </div>
+              <% end %>
+            </div>
+        </div>
+    </div>
+</div>

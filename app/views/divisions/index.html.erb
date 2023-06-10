@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Divisions</h1>
+            <%= link_to 'Create New Division', new_division_path, class: 'btn btn-outline-primary' %>
 
-<h1>Divisions</h1>
-
-<div id="divisions">
-  <% @divisions.each do |division| %>
-    <%= render division %>
-    <p>
-      <%= link_to "Show this division", division %>
-    </p>
-  <% end %>
+            <div class="row" >
+                <% @divisions.each do |division| %>
+                        <div class="card mt-3 ">
+                            <div class="card-body">
+                                <h3><%= "#{division.division}" %></h3>
+                                <br>
+                                <%= link_to 'Show', division, class: 'btn btn-outline-primary' %>
+                                <%= link_to 'Edit', edit_division_path(division), class: 'btn btn-outline-primary'  %>
+                                <%= link_to 'Destroy', division, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary'  %>
+                            </div>
+                        </div>
+                <% end %> 
+                <div class="bb_pagination mb-4">
+                    <div class="page_info mb-2">
+                        <%= page_entries_info @divisions, {entry_name: 'division'} %>
+                    </div> 
+                    <%= will_paginate @divisions, :container => false %>
+                </div>
+            </div>
+        </div>
 </div>
 
-<%= link_to "New division", new_division_path %>
