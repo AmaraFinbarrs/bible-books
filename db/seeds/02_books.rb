@@ -27,15 +27,18 @@ if Book.count.zero?
     if counter <= 5
       Book.create!(title: name,
                    description: Faker::Lorem.paragraph(sentence_count: 10),
-                   division_id: 1)
+                   division_id: 1,
+                   no_of_chapter: 8)
     elsif counter <= 17
       Book.create!(title: name,
                    description: Faker::Lorem.paragraph(sentence_count: 10),
-                   division_id: 2)
+                   division_id: 2,
+                   no_of_chapter: 8)
     else
       Book.create!(title: name,
                    description: Faker::Lorem.paragraph(sentence_count: 10),
-                   division_id: 3)
+                   division_id: 3,
+                   no_of_chapter: 8)
     end
   end
 end
