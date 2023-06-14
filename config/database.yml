@@ -26,6 +26,6 @@ test:
 production:
   <<: *default
   database: bible-books_production
-  username: bible-books
+  username: biblebooks
   password: <%= ENV['BIBLE-BOOKS_DATABASE_PASSWORD'] %>
   url:  <%= ENV['DATABASE_URL'] %>
