@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2023_06_09_185613) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2023_06_09_185613) do
 
   create_table "chapters", force: :cascade do |t|
     t.integer "chapter_no"
-    t.integer "book_id", null: false
+    t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_chapters_on_book_id"
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 2023_06_09_185613) do
   create_table "verses", force: :cascade do |t|
     t.integer "verse_no"
     t.text "content"
-    t.integer "chapter_id", null: false
-    t.integer "book_id", null: false
+    t.bigint "chapter_id", null: false
+    t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_verses_on_book_id"

@@ -32,16 +32,15 @@ class BooksController < ApplicationController
   end
 
   def create_book_chapters
-    no_of_chapter = book_params[:no_of_chapter]
+    no_of_chapter = book_params[:no_of_chapter].to_i
 
-    (1..no_of_chapter.to_i).each do |chapter_number|
+    (1..no_of_chapter).each do |chapter_number|
       Chapter.create!(chapter_no: chapter_number,
                       book_id: @book.id)
     end
-    create_book_chapters
   end
 
-  def create_book_chapters
+  def update_book_chapters
     no_of_chapter = book_params[:no_of_chapter].to_i
 
     (1..no_of_chapter).each do |chapter_number|
@@ -78,7 +77,7 @@ class BooksController < ApplicationController
     else
       render :edit
     end
-    create_book_chapters
+    update_book_chapters
     delete_lingering_chapters
   end
 

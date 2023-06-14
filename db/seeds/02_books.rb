@@ -42,3 +42,5 @@ if Book.count.zero?
     end
   end
 end
+
+puts '================ Books Created!====================='
