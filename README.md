@@ -22,27 +22,6 @@ These are the various technical stack that is used in the app
 - JQuery 3.6.4
 - Popper 2.11.7
 
-## Extra Stuff (to be deleted...)
+## Link to Web App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[https://bible-books.onrender.com](https://bible-books.onrender.com)
