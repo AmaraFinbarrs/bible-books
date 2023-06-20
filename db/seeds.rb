@@ -1,3 +1,12 @@
+begin
+  # search current file  location for config
+  require_relative 'config'
+rescue LoadError
+  puts 'Config file "db/config.rb" not found'
+  puts 'Check README.md for details on creating the config file'
+  exit
+end
+
 require 'faker'
 
 puts 'Running Seeds'
