@@ -1,4 +1,6 @@
 if Verse.count.zero?
+  print "#{pretty_print_name('Verses')}\tStart: #{pretty_print_value(Time.now - @start_time)}"
+
   genesis = { '1': 8, '2': 8, '3': 8, '4': 8, '5': 8, '6': 8, '7': 8, '8': 8 }
   exodus = { '1': 8, '2': 8, '3': 8, '4': 8, '5': 8, '6': 8, '7': 8, '8': 8 }
   leviticus = { '1': 8, '2': 8, '3': 8, '4': 8, '5': 8, '6': 8, '7': 8, '8': 8 }
@@ -18,6 +20,7 @@ if Verse.count.zero?
       end
     end
   end
-end
 
-puts '========== Verses Created!==============='
+  puts "\tDuration: #{pretty_print_value(Time.now - @start_time)}   Elapsed: #{pretty_print_value(Time.now - @start_time)}"
+  @last_time = Time.now
+end

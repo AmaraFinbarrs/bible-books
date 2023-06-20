@@ -1,4 +1,6 @@
 if Book.count.zero?
+  print "#{pretty_print_name('Books')}\tStart: #{pretty_print_value(Time.now - @start_time)}"
+
   book_name = ['Genesis',
                'Exodus',
                'Leviticus',
@@ -41,6 +43,7 @@ if Book.count.zero?
                    no_of_chapter: 8)
     end
   end
-end
 
-puts '================ Books Created!====================='
+  puts "\tDuration: #{pretty_print_value(Time.now - @start_time)}   Elapsed: #{pretty_print_value(Time.now - @start_time)}"
+  @last_time = Time.now
+end
