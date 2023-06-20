@@ -3,7 +3,6 @@ class Verse < ApplicationRecord
 
   belongs_to :chapter
   belongs_to :book
-  belongs_to :user
 
   self.per_page = 20
 end
