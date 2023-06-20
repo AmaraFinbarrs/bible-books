@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(version: 2023_06_20_172201) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.bigint "books_id", null: false
-    t.bigint "verses_id", null: false
+    t.bigint "books_id"
+    t.bigint "verses_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "chapters_id", null: false
+    t.bigint "chapters_id"
     t.bigint "user_id", null: false
     t.index ["books_id"], name: "index_notes_on_books_id"
     t.index ["chapters_id"], name: "index_notes_on_chapters_id"
