@@ -5,6 +5,6 @@ class AddAttributesToUsers < ActiveRecord::Migration[6.1]
     add_column :users, :date_of_birth, :datetime
     add_column :users, :mobile_number, :bigint
     add_column :users, :password, :string
-    add_column :users, :portal, :reference
+    add_reference :users, :portal, foreign_key: true
   end
 end
