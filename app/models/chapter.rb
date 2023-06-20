@@ -1,5 +1,7 @@
 class Chapter < ApplicationRecord
-  belongs_to :book
-
   has_many :verses
+  has_many :notes
+
+  belongs_to :book
+  belongs_to :user
 end
