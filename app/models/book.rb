@@ -5,7 +5,6 @@ class Book < ApplicationRecord
   has_many :notes
 
   belongs_to :division
-  belongs_to :user
 
   validates_numericality_of :no_of_chapter, greater_than_or_equal_to: 0
 

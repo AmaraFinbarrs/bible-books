@@ -5,9 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :notes
-  has_many :books
-  has_many :chapters
-  has_many :verses
 
   belongs_to :portal
 end

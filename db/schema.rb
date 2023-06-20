@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_20_030610) do
+ActiveRecord::Schema.define(version: 2023_06_20_172201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,13 +41,15 @@ ActiveRecord::Schema.define(version: 2023_06_20_030610) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.bigint "books_id", null: false
-    t.bigint "verses_id", null: false
-    t.bigint "chapters_id", null: false
+    t.bigint "books_id"
+    t.bigint "verses_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "chapters_id"
+    t.bigint "user_id", null: false
     t.index ["books_id"], name: "index_notes_on_books_id"
     t.index ["chapters_id"], name: "index_notes_on_chapters_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
     t.index ["verses_id"], name: "index_notes_on_verses_id"
   end
 
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 2023_06_20_030610) do
   add_foreign_key "chapters", "books"
   add_foreign_key "notes", "books", column: "books_id"
   add_foreign_key "notes", "chapters", column: "chapters_id"
+  add_foreign_key "notes", "users"
   add_foreign_key "notes", "verses", column: "verses_id"
   add_foreign_key "users", "portals"
   add_foreign_key "verses", "books"

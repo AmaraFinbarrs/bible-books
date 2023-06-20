@@ -3,5 +3,4 @@ class Chapter < ApplicationRecord
   has_many :notes
 
   belongs_to :book
-  belongs_to :user
 end
