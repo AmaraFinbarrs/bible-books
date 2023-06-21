@@ -1,5 +1,5 @@
 class VersesController < ApplicationController
-  before_action :set_verse, only: %i[ show edit update destroy ]
+  before_action :set_verse, only: %i[show edit update destroy]
   # before_action :find_values_for_dynamic_dropdown
 
   # GET /verses or /verses.json
