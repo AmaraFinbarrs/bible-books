@@ -1,6 +1,6 @@
 # app/models/book.rb
 class Book < ApplicationRecord
-  has_many :chapters
+  has_many :chapters, dependent: :destroy
   has_many :verses
   has_many :notes
 

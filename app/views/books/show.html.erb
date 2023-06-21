@@ -7,9 +7,13 @@
 
     <p><strong>Description: </strong><%= @book.description %></p>
 
-    <%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-primary' %>
-    <%= link_to "Delete", book_path(@book.id), method: :delete, class: 'btn btn-danger' %>
-    <%= link_to "Back", books_path, class: 'btn btn-secondary' %>
+    <% if user_signed_in? && admin?%>
+        <%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-primary' %>
+        <%= link_to "Delete", book_path(@book.id), method: :delete, class: 'btn btn-danger' %>
+        <%= link_to "Back", books_path, class: 'btn btn-secondary' %>
+    <% else %>
+        <%= link_to "Back", books_path, class: 'btn btn-secondary' %>
+    <% end%>
 
     <% @chapters.each do |chapter| %>
         <div class="accordion">

@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :admin?, only: %i[new create edit update destroy]
+
   def index
     @divisions = Division.all
     div = params[:div]
@@ -93,5 +96,11 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :description, :division_id, :no_of_chapter)
+  end
+
+  def admin?
+    unless current_user && current_user.portal&.name == 'admin'
+      redirect_back(fallback_location: root_path, alert: 'Only an admin can do that, sorry!')
+    end
   end
 end

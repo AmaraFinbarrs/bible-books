@@ -3,8 +3,10 @@
 <%= render @division %>
 
 <div>
+<% if admin? %>
   <%= link_to "Edit this division", edit_division_path(@division) %> |
+<% end %>
   <%= link_to "Back to divisions", divisions_path %>
 
-  <%= button_to "Destroy this division", @division, method: :delete %>
+  <%= button_to "Destroy this division", @division, method: :delete if admin? %>
 </div>
