@@ -25,4 +25,12 @@ module ApplicationHelper
       congratulations: 'alert-success'
     }[flash_type.to_sym] || flash_type.to_s
   end
+
+  def member?
+    current_user.portal.name == 'member'
+  end
+
+  def admin?
+    current_user.portal.name == 'admin'
+  end
 end
