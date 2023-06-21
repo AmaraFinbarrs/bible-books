@@ -1,5 +1,6 @@
 class VersesController < ApplicationController
   before_action :set_verse, only: %i[show edit update destroy]
+  before_action :admin?, only: %i[new create edit update destroy]
   # before_action :find_values_for_dynamic_dropdown
 
   # GET /verses or /verses.json
@@ -74,7 +75,8 @@ class VersesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+  # Use callbacks to share common setup or constraints between actions.
   def set_verse
     @verse = Verse.find(params[:id])
   end
@@ -82,6 +84,12 @@ class VersesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def verse_params
     params.require(:verse).permit(:verse_no, :content, :chapter_id, :book_id)
+  end
+
+  def admin?
+    unless current_user && current_user.portal&.name == 'admin'
+      redirect_back(fallback_location: root_path, alert: 'Only an admin can do that, sorry!')
+    end
   end
 
   # def find_values_for_dynamic_dropdown

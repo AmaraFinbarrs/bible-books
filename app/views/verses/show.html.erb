@@ -20,5 +20,7 @@
   <%= @verse.book_id %>
 </p>
 
-<%= link_to 'Edit', edit_verse_path(@verse) %> |
+<% if admin? %>
+  <%= link_to 'Edit', edit_verse_path(@verse) %> |
+<% end %>
 <%= link_to 'Back', verses_path %>

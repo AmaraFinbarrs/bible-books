@@ -1,5 +1,6 @@
 class DivisionsController < ApplicationController
   before_action :set_division, only: %i[ show edit update destroy ]
+  before_action :admin?, only: %i[new create edit update destroy]
 
   # GET /divisions or /divisions.json
   def index
@@ -59,12 +60,18 @@ class DivisionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_division
-      @division = Division.find(params[:id])
-    end
+  def set_division
+    @division = Division.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def division_params
-      params.require(:division).permit(:division)
+  # Only allow a list of trusted parameters through.
+  def division_params
+    params.require(:division).permit(:division)
+  end
+
+  def admin?
+    unless current_user && current_user.portal&.name == 'admin'
+      redirect_back(fallback_location: root_path, alert: 'Only an admin can do that, sorry!')
     end
+  end
 end

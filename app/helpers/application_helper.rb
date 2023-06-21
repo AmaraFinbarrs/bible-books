@@ -27,10 +27,10 @@ module ApplicationHelper
   end
 
   def member?
-    current_user.portal.name == 'member'
+    current_user&.portal&.name == 'member'
   end
 
   def admin?
-    current_user.portal.name == 'admin'
+    current_user&.portal&.name == 'admin'
   end
 end
