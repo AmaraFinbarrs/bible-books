@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-BibleBooks is a dynamic web application designed to foster personal reflection on the Bible. It provides a secure and private online space for users to engage deeply with the sacred texts, exploring different books, chapters, and verses.
+BibleBooks is a dynamic web application designed to foster personal reflection on the Bible. It provides a secure and private online space for users to engage deeply with sacred texts, exploring different books, chapters, and verses.
 
 ### Key Features:
 
@@ -25,3 +25,14 @@ These are the various technical stack that is used in the app
 ## Link to Web App
 
 [https://bible-books.onrender.com](https://bible-books.onrender.com)
+
+## Test Login Credentials
+If you'd like to explore the app without signing up, you can conveniently use the provided details below. Log in by clicking the 'Member Portal' link in the navigation bar.
+
+For Admin Portal:
+- Username: BB-test-admin-1@biblebook.io
+- password: password
+
+For Member Portal:
+- Username: BB-test-member-1@biblebook.io
+- password: password
