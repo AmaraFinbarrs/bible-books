@@ -43,4 +43,4 @@ yarn-debug.log*
 local_env.yml
 
 ## Ignore db/config.rb file for seeding data
-db/config.rb
+# db/config.rb
