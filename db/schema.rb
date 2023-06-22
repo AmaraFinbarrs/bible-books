@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(version: 2023_06_20_172201) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.bigint "books_id"
-    t.bigint "verses_id"
+    t.bigint "books_id", null: true
+    t.bigint "verses_id", null: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "chapters_id"
+    t.bigint "chapters_id", null: true
     t.bigint "user_id", null: false
     t.index ["books_id"], name: "index_notes_on_books_id"
     t.index ["chapters_id"], name: "index_notes_on_chapters_id"
@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(version: 2023_06_20_172201) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"

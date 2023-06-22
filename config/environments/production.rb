@@ -72,11 +72,13 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     user_name: 'apikey',
     password: ENV['SENDGRID_API_KEY'],
-    #domain: '',
+    domain: 'bible-books.onrender.com',
     address: 'smtp.sendgrid.net',
     port: 465,
-    authentication: :plain,
-    enable_starttls_auto: true
+    authentication: :login,
+    enable_starttls_auto: true,
+    ssl: true
+
   }
   config.action_mailer.default_url_options = { host: 'bible-books.onrender.com', protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
