@@ -1,6 +1,8 @@
 class DivisionsController < ApplicationController
+  include AdminAccessible
+
   before_action :set_division, only: %i[ show edit update destroy ]
-  before_action :admin?, only: %i[new create edit update destroy]
+  before_action :admin?
 
   # GET /divisions or /divisions.json
   def index
@@ -67,11 +69,5 @@ class DivisionsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def division_params
     params.require(:division).permit(:division)
-  end
-
-  def admin?
-    unless current_user && current_user.portal&.name == 'admin'
-      redirect_back(fallback_location: root_path, alert: 'Only an admin can do that, sorry!')
-    end
   end
 end
