@@ -16,13 +16,15 @@
 
     <% flash.each do |type, msg| %>
       <% if type != 'timedout' %>
-        <div class="alert <%= alert_class_for(type) %> alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x px-5" role="alert">
+        <div class="alert <%= alert_class_for(type) %> alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x px-5 flash-messages" role="alert">
           <%= msg %>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <% end %>
     <% end %>
 
-    <%= yield %>
+    <div class="main-content">
+      <%= yield %>
+    </div>
   </body>
 </html>
