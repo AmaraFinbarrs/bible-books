@@ -43,7 +43,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   # Send emails when in dev env
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
 
   # Send Mail with Sendgrid
   config.action_mailer.smtp_settings = {

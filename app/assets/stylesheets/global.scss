@@ -1,0 +1,12 @@
+.flash-messages {
+  position: absolute;
+  z-index: 2;
+}
+
+.main-content {
+  z-index: 1;
+}
+
+.navbar {
+  z-index: 0;
+}
