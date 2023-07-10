@@ -46,6 +46,9 @@ gem 'devise'
 # Use font awesome icons
 gem 'font-awesome-sass'
 
+# Use for API integration
+gem 'httparty', '~> 0.21.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
