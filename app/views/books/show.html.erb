@@ -24,7 +24,7 @@
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
                         <% Verse.where(chapter_id: chapter.id, book_id: @book.id).each do |verse| %>
-                            <p><strong>Verse <%=verse.verse_no%>:</strong> <%=verse.content.gsub("<br/>", "——")%></p>
+                            <p><strong>Verse <%=verse.verse_no%>:</strong> <%=verse.content.gsub("<br/>", " ")%></p>
                         <% end %>
                     </div>
                 </div>
