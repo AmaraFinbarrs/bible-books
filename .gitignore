@@ -44,3 +44,6 @@ local_env.yml
 
 ## Ignore db/config.rb file for seeding data
 # db/config.rb
+
+## Ignore some lib tasks
+lib/http_request.rake
