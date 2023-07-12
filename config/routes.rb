@@ -25,4 +25,8 @@ Rails.application.routes.draw do
   resources :divisions
 
   get 'search_related_words', to: 'verses#search_related_words'
+
+  # Service Worker Routes
+  get '/service-worker.js', to: 'service_worker#service_worker'
+  get '/manifest.json', to: 'service_worker#manifest'
 end
