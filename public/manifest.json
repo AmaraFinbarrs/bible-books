@@ -1,0 +1,24 @@
+{
+    "accordion.js": "/packs/js/accordion-b8d16708d6b22426b121.js",
+    "accordion.js.map": "/packs/js/accordion-b8d16708d6b22426b121.js.map",
+    "application.js": "/packs/js/application-c94c911533bc02cba6ee.js",
+    "application.js.map": "/packs/js/application-c94c911533bc02cba6ee.js.map",
+    "entrypoints": {
+        "accordion": {
+        "js": [
+            "/packs/js/accordion-b8d16708d6b22426b121.js"
+        ],
+        "js.map": [
+            "/packs/js/accordion-b8d16708d6b22426b121.js.map"
+        ]
+        },
+        "application": {
+        "js": [
+            "/packs/js/application-c94c911533bc02cba6ee.js"
+        ],
+        "js.map": [
+            "/packs/js/application-c94c911533bc02cba6ee.js.map"
+        ]
+        }
+    }
+}
