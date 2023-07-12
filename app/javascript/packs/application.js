@@ -16,7 +16,7 @@ import "bootstrap";
 import "./application.scss";
 
 window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+    navigator.serviceWorker.register('/service-worker.js', {scope: './'}).then(registration => {
         console.log('ServiceWorker registered: ', registration);
 
         var serviceWorker;
