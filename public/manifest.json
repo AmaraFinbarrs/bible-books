@@ -1,24 +1,39 @@
 {
-    "accordion.js": "/packs/js/accordion-b8d16708d6b22426b121.js",
-    "accordion.js.map": "/packs/js/accordion-b8d16708d6b22426b121.js.map",
-    "application.js": "/packs/js/application-c94c911533bc02cba6ee.js",
-    "application.js.map": "/packs/js/application-c94c911533bc02cba6ee.js.map",
+    "accordion.js": "/packs/js/accordion-c450f27b80dfc963c4db.js",
+    "accordion.js.map": "/packs/js/accordion-c450f27b80dfc963c4db.js.map",
+    "application.css": "/packs/js/application-7ee84662.css",
+    "application.js": "/packs/js/application-51e6482eccc36edc0b5a.js",
+    "application.js.map": "/packs/js/application-51e6482eccc36edc0b5a.js.map",
     "entrypoints": {
-        "accordion": {
+      "packs/js/accordion": {
         "js": [
-            "/packs/js/accordion-b8d16708d6b22426b121.js"
+          "packs/js/accordion-c450f27b80dfc963c4db.js"
         ],
         "js.map": [
-            "/packs/js/accordion-b8d16708d6b22426b121.js.map"
+          "packs/js/accordion-c450f27b80dfc963c4db.js.map"
         ]
-        },
-        "application": {
+      },
+      "packs/js/application": {
+        "css": [
+          "packs/js/application-7ee84662.css"
+        ],
         "js": [
-            "/packs/js/application-c94c911533bc02cba6ee.js"
+          "packs/js/application-51e6482eccc36edc0b5a.js"
         ],
         "js.map": [
-            "/packs/js/application-c94c911533bc02cba6ee.js.map"
+          "packs/js/application-51e6482eccc36edc0b5a.js.map"
         ]
-        }
+      },
+      "packs/css/application": {
+        "css": [
+          "packs/css/application-7ee84662.css"
+        ],
+        "js": [
+          "packs/css/application-a3e2718c381eda07574d.js"
+        ],
+        "js.map": [
+          "packs/css/application-a3e2718c381eda07574d.js.map"
+        ]
+      }
     }
 }
