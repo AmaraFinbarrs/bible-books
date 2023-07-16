@@ -30,8 +30,7 @@ These are the various technical stack that is used in the app
 If you'd like to explore the app without signing up, you can conveniently use the provided details below. Log in by clicking the 'Member Portal' link in the navigation bar.
 
 For Admin Portal:
-- Username: BB-test-admin-1@biblebook.io
-- password: password
+- You are not allowed to access the admin portal at the moment!
 
 For Member Portal:
 - Username: BB-test-member-1@biblebook.io
