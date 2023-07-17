@@ -2,7 +2,7 @@
   "short_name": "BibleBooks",
   "name": "BibleBooks",
   "start_url": "/",
-  "background_colour": "#FFFFFF",
+  "background_colour": "#000000",
   "display": "fullscreen",
   "scope": "/",
   "theme_color": "#3367D6",
