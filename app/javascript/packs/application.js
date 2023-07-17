@@ -15,6 +15,8 @@ ActiveStorage.start()
 import "bootstrap";
 import "./application.scss";
 
+const images = require.context('../../assets/images', true)
+
 window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js', {scope: './'}).then(registration => {
         console.log('ServiceWorker registered: ', registration);
