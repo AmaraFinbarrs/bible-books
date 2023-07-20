@@ -47,3 +47,6 @@ local_env.yml
 
 ## Ignore some lib tasks
 lib/http_request.rake
+
+## Ignore public/service-worker.js*
+public/service-worker.js*
