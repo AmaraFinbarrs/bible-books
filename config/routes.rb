@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   resources :divisions
 
   get 'search_related_words', to: 'verses#search_related_words'
+  get 'offline', to: 'home#offline', as: :offline
 end
