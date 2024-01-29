@@ -1,7 +1,7 @@
 {
  "name": "BibleBooks",
  "short_name": "BibleBooks",
- "id": "/",
+ "id": "com.onrender.bible-books",
  "description": "A bible web app that fosters personal reflection and growth.",
  "icons": [
   {
@@ -39,6 +39,12 @@
    "sizes": "192x192",
    "type": "image\/png",
    "density": "4.0"
+  },
+  {
+   "src": "/icon/android-icon-512x512.png",
+   "sizes": "512x512",
+   "type": "image\/png",
+   "density": "5.0"
   }
  ],
  "start_url": "/",
