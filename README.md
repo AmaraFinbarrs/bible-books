@@ -9,6 +9,7 @@ BibleBooks is a dynamic web application designed to foster personal reflection o
 - User Portal: Dive into the rich tapestry of biblical content, embarking on a personal journey of self-reflection and spiritual growth.
 - Admin Portal: Ensuring accuracy and variety, administrators curate reliable Bible content and add different versions for a comprehensive experience.
 - Guest Mode: Access the application without authorization, still benefiting from a range of resources (limited features apply).
+- PWA: This app is also designed as a progressive web app which can be installed via the web app.
 
 Join us on this transformative digital exploration of the Word. Experience solace, inspiration, and a profound connection with the divine teachings encapsulated within the Bible.
 
